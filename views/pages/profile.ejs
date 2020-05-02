@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('../components/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include ('../components/header') %>
+    </header>
+    <main>
+        <div id="content" class="jumbotron">
+            <h1><%= user.name %></h1>
+            <p>Email: <%= user.email %></p>
+            <p>Employee ID: <%= user.id %></p>
+            <p>Gender: <%= user.gender %></p>
+        </div>
+    </main>
+    <footer>
+        <%- include ('../components/footer') %>
+    </footer>
+</body>
+
+</html>

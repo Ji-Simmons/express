@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('../components/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include ('../components/header') %>
+    </header>
+    <main>
+        <body>
+<h1>Welcome</h1>
+<p>Enter Employee Information Here.</p>
+<form id="myForm">
+    <label>Search:</label><input id="search" type="text" />
+    <input type="submit" value="Search" />
+</form>
+
+<script>
+const myForm = document.getElementById('myForm');
+const searchField = document.getElementById('search');
+myForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    console.log('attempting to search.')
+    fetch(`/search:name/${searchField.value}`)
+        .then((result) => {
+            return result.json();
+        })
+        .then((data) => {
+            console.log('data: ', data);
+        })
+        .catch((err) => {
+            console.log('error when fetching: ', err);
+        });
+})
+</script>
+</body>
+    </main>
+    <footer>
+        <%- include ('../components/footer') %>
+    </footer>
+
+</html>
